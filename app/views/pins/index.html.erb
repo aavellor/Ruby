@@ -17,8 +17,8 @@
           <h5 class="card-title"><%= pin.title %></h5>
           <p class="card-text"><%= pin.description %></p>
           <%# <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">Editar</a>  %>
-          <%= link_to 'Editar', edit_pin_path(pin), class: "btn btn-primary" %>
-          <%= link_to 'Eliminar', pin, method: :delete, data: { confirm: 'Are you sure?' },class: "btn btn-danger pull-right"  %>
+          <%= link_to '<i class="fas fa-pencil-alt"></i> Editar'.html_safe, edit_pin_path(pin), class: "btn btn-primary" %>
+          <%= link_to '<i class="fas fa-minus"></i> Eliminar'.html_safe, pin, method: :delete, data: { confirm: 'Are you sure?' },class: "btn btn-danger pull-right"  %>
         </div>
       </div> 
     </div>
