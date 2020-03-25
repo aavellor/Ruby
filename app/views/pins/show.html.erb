@@ -1,0 +1,27 @@
+<div class="col-md-12 row pt-3 centered">
+  <div class="col-md-12">
+    <h1>Mantenedor de autos</h1>
+  </div>
+</div>
+
+<p id="notice" style="text-align: center;color: green;"><%= notice %></p>
+
+<form class="container pt-2">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Titulo</label>
+    <input type="email" readonly value="<%= @pin.title %>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Descripción</label>
+    <textarea readonly class="form-control" id="exampleFormControlTextarea1" rows="3"><%= @pin.title %></textarea>
+   </div>
+    <div class="form-group">
+    <label for="exampleFormControlTextarea1">Url imagen</label>
+    <input type="email" readonly value="<%= @pin.image %>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
+   </div>
+</form>
+
+<div class="container centered">
+<%= link_to 'Editar', edit_pin_path(@pin) %> |
+<%= link_to 'volver', pins_path %>
+</div>

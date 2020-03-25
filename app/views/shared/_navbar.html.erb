@@ -13,8 +13,11 @@
         <li class="nav-item <%= 'active' if current_page?(test_about_path)%>">
             <%= link_to "Más sobre el proyecto", {controller: "test",action:"about"},class: "nav-link" %>
         </li>
-          <li class="nav-item <%= 'active' if current_page?(test_contact_path)%>">
+        <li class="nav-item <%= 'active' if current_page?(test_contact_path)%>">
            <%= link_to "Contacto", {controller: "test",action:"contact"},class: "nav-link" %>
+        </li>
+        <li class="nav-item <%= 'active' if current_page?(pins_path)%>">
+           <%= link_to "Pins", {controller: "pins",action:"index"},class: "nav-link" %>
         </li>
     </div>
   </div>

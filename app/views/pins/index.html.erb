@@ -1,0 +1,26 @@
+<div class="col-md-12 row pt-3">
+  <div class="col-md-10">
+    <h1>Mantenedor de autos</h1>
+  </div>
+   <div class="col-md-2">
+    <%= link_to 'Nuevo Auto', new_pin_path,class: "col-md-6 btn btn-success pull-right" %>
+  </div>
+</div>
+
+<%#  %>
+<div class="row  pt-1 container-fluid">
+  <% @pins.each do |pin| %>
+    <div class="col-md-4 pt-3 h-100">
+      <div class="card pt-2" >
+        <%= image_tag(pin.image, :class=>'card-img-top heigth-img') %>
+        <div class="card-body">
+          <h5 class="card-title"><%= pin.title %></h5>
+          <p class="card-text"><%= pin.description %></p>
+          <%# <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">Editar</a>  %>
+          <%= link_to 'Editar', edit_pin_path(pin), class: "btn btn-primary" %>
+          <%= link_to 'Eliminar', pin, method: :delete, data: { confirm: 'Are you sure?' },class: "btn btn-danger pull-right"  %>
+        </div>
+      </div> 
+    </div>
+  <% end %>
+</div>
