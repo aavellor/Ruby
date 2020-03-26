@@ -3,7 +3,7 @@
     <h1>Mantenedor de autos </h1>
   </div>
    <div class="col-md-4">
-    <%= link_to '<i class="fas fa-plus"></i> Nuevo Auto'.html_safe, new_pin_path,class: "col-md-4 btn btn-success pull-right" %>
+    <%= link_to '<i class="fas fa-plus"></i> Nuevo Auto'.html_safe, new_pin_path,class: "col-md-4 btn btn-light pull-right" %>
   </div>
 </div>
 
@@ -17,8 +17,11 @@
           <h5 class="card-title"><%= pin.title %></h5>
           <p class="card-text"><%= pin.description %></p>
           <%# <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">Editar</a>  %>
-          <%= link_to '<i class="fas fa-pencil-alt"></i> Editar'.html_safe, edit_pin_path(pin), class: "btn btn-primary" %>
-          <%= link_to '<i class="fas fa-minus"></i> Eliminar'.html_safe, pin, method: :delete, data: { confirm: 'Are you sure?' },class: "btn btn-danger pull-right"  %>
+          <div class="centered">
+            <%= link_to '<i class="far fa-eye"></i> Mostrar'.html_safe, pin, class: "btn btn-secondary" %>
+            <%= link_to '<i class="fas fa-pencil-alt"></i> Editar'.html_safe, edit_pin_path(pin), class: "btn btn-primary" %>
+            <%= link_to '<i class="fas fa-minus"></i> Eliminar'.html_safe, pin, method: :delete, data: { confirm: 'Are you sure?' },class: "btn btn-dark"  %>
+          </div>
         </div>
       </div> 
     </div>
