@@ -32,7 +32,21 @@
 
         <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
                 <ul class="navbar-nav ml-auto">
-                    <% if user_signed_in? %>
+<% if user_signed_in? %>
+
+
+<% if current_user.image.attached? %>
+
+<li class="nav-item">
+<%= link_to((image_tag current_user.image.variant(resize: '30x30^',extent: '30x30', gravity: 'Center'), class:"rounded-circle"), edit_user_registration_path,class: "nav-link") %>
+
+
+</li>
+
+
+<% end %>
+
+
 
                             <li class="nav-item">
                                <a class="nav-link">Hola <%= current_user.name %> </a>

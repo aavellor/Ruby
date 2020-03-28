@@ -22,13 +22,25 @@
       <%= form.text_field :description,class:"form-control" %>
     </div>
 
-    <div class="form-group">
-      <%= form.label :image %>
-      <%= form.text_field :image,class:"form-control" %>
+    <div class="field custom-file form-group">
+      <%= form.label :images, class: "custom-file-label" %>
+      <%= form.file_field :images, multiple: true, class: "custom-file-input" %>
     </div>
 
+    <% if @pin.images.attached? %>
+    <div class="row pt-3">
+      <% @pin.images.each do |image| %>
+        <div class="col-6 col-md-2">
+          <%= image_tag image.variant(resize: '300x300^', extent: '300x300^', gravity: 'Center'), class: "w-100" %>
+          <br>
+          <%= link_to 'Remove', delete_image_pin_path(@pin, image), method: :delete, data: { confirm: 'Are you sure?' }, class:"offset-3 col-md-5 btn btn-sm btn-danger" %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
 
-    <div class="actions">
+
+    <div class="actions pt-3">
       <%= form.submit "Guardar", class:"btn btn-primary col-md-12"  %>
     </div>
     

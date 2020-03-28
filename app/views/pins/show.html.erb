@@ -15,10 +15,16 @@
     <label for="exampleFormControlTextarea1">Descripción</label>
     <textarea readonly class="form-control" id="exampleFormControlTextarea1" rows="3"><%= @pin.title %></textarea>
    </div>
-    <div class="form-group">
-    <label for="exampleFormControlTextarea1">Url imagen</label>
-    <input type="email" readonly value="<%= @pin.image %>" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="">
-   </div>
+<div class="row">
+    <% @pin.images.each do |image| %>
+    <div class="col-6 col-md-2">
+          <%= image_tag image.variant(resize: '300x300^', extent: '300x300^', gravity: 'Center'), class: "w-100" %>
+    </div>
+    <% end %>
+</div>
+    
+
+
 </form>
 
 <div class="container centered">
