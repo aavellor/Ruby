@@ -13,23 +13,23 @@
     <div class="col-md-4 pt-3 h-100">
       <div class="card pt-2" >
         <% if pin.images.attached? %>           
-           <div id="carouselExampleControls<%= pin.id %>" class="carousel slide" data-ride="carousel">
-              <div class="carousel-inner">
-                 <% pin.images.each do |image| %>                   
-                      <div class="carousel-item <%= pin.images[0]==image ? 'active' : '' %>">
-                        <%= image_tag image.variant(resize: '465x262^'), class:'d-block w-100 card-img-top heigth-img' %>
-                      </div>
-                         <% end %>
-                    </div>
-                    <a class="carousel-control-prev" href="#carouselExampleControls<%= pin.id %>" role="button" data-slide="prev">
-                      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                      <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carouselExampleControls<%= pin.id %>" role="button" data-slide="next">
-                      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                      <span class="sr-only">Next</span>
-                    </a>
-                  </div>  
+          <div id="carouselExampleControls<%= pin.id %>" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <% pin.images.each do |image| %>                   
+                    <div class="carousel-item <%= pin.images[0]==image ? 'active' : '' %>">
+                         <%= image_tag image.variant(resize: '465x262^'), class:'d-block w-100 card-img-top heigth-img' %>
+                     </div>
+                 <% end %>
+             </div>
+             <a class="carousel-control-prev" href="#carouselExampleControls<%= pin.id %>" role="button" data-slide="prev">
+                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                 <span class="sr-only">Previous</span>
+             </a>
+             <a class="carousel-control-next" href="#carouselExampleControls<%= pin.id %>" role="button" data-slide="next">
+                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                 <span class="sr-only">Next</span>
+             </a>
+         </div>  
          <% end %>
         <div class="card-body">
           <h5 class="card-title"><%= pin.title %></h5>
