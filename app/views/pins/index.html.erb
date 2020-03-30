@@ -7,6 +7,15 @@
   </div>
 </div>
 
+<% if @pins.count==0 %>
+<div class="pt-3">
+    <div class="alert alert-info centered" role="alert" >
+      No hay pines registrados
+    </div>
+  </div>
+<% end %>
+
+
 <%#  %>
 <div class="row  pt-1 container-fluid">
   <% @pins.each do |pin| %>
